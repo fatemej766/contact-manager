@@ -1,0 +1,129 @@
+﻿
+ClassicEditor
+    .create(document.querySelector('#Texteditor'), {
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'link',
+                '|',
+                'fontSize',
+                'fontColor',
+                '|',
+                'imageUpload',
+                'blockQuote',
+                'insertTable',
+                'undo',
+                'redo',
+                'codeBlock'
+            ]
+        },
+        language: 'fa',
+        table: {
+            contentToolbar: [
+                'tableColumn',
+                'tableRow',
+                'mergeTableCells'
+            ]
+        },
+        licenseKey: '',
+        simpleUpload: {
+            // The URL that the images are uploaded to.
+            uploadUrl: '/up-img-new'
+        }
+
+    })
+    .then(editor => {
+        window.editor = editor;
+
+
+
+
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+ClassicEditor
+    .create(document.querySelector('#BiographyTexteditor'), {
+
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                '|',
+                'fontSize',
+                'fontColor',
+                '|',
+                'imageUpload',
+                'blockQuote',
+                'insertTable',
+                'undo',
+                'redo',
+                'codeBlock'
+            ]
+        },
+        language: 'fa',
+        table: {
+            contentToolbar: [
+                'tableColumn',
+                'tableRow',
+                'mergeTableCells'
+            ]
+        },
+        licenseKey: '',
+        simpleUpload: {
+            // The URL that the images are uploaded to.
+            uploadUrl: '/up-img-new'
+        },
+        // Define content filtering rules
+        allowedContent: {
+            // Allow only specific elements
+            elements: 'b i code',
+            // Allow only attributes needed for styling
+            attributes: {
+                '*': ['style']
+            }
+        }
+    })
+    .then(editor => {
+        editor.editing.view.change(writer => {
+            writer.setStyle('min-height', '200px', editor.editing.view.document.getRoot());
+        });
+        window.editor = editor;
+    })
+    .catch(error => {
+        console.error(error);
+    });
+//
+// $(function () {
+//     //Normal Configuration
+//     $("[id*=TextBox1]").MaxLength({ MaxLength: 10 });
+//
+//     //Specifying the Character Count control explicitly
+//     $("[id*=TextBox2]").MaxLength(
+//         {
+//             MaxLength: 15,
+//             CharacterCountControl: $('#counter')
+//         });
+//
+//     //Disable Character Count
+//     $("[id*=TextBox3]").MaxLength(
+//         {
+//             MaxLength: 20,
+//             DisplayCharacterCount: false
+//         });
+// });
+
+/*window.addEventListener("load", () => {
+    var textarea = document.querySelector("#Texteditor"), remain = document.querySelector("#remain-textarea-characters");
+    remain.innerHTML = textarea.maxLength + ' ' + 'کاراکتر باقی مانده';
+    textarea.addEventListener("keyup", () => {
+        var remainCount = textarea.maxLength - textarea.value.length;
+        remain.innerHTML = remainCount + ' ' + 'کاراکتر باقی مانده';
+    });
+});*/

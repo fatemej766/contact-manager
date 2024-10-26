@@ -1,0 +1,102 @@
+
+
+.notfound {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.notfound img {
+  width: 150px;
+  height: auto;
+}
+
+h2 {
+  color: #555;
+}
+
+section {
+  margin-top: 20px;
+}
+
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+ul li:hover {
+  background-color: #f1f1f1;
+}
+
+.group {
+  overflow: hidden; /* Clears floats */
+}
+
+.buttons {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 150px;
+}
+
+.buttons button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons .fa-eye {
+  background-color: orange;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+}
+
+.buttons .fa-pencil {
+  background-color: lightblue;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+}
+
+.buttons .fa-trash {
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+}
+
+.buttons button:hover {
+  opacity: 0.8;
+}
+.photo {
+  margin-right: 35px;
+  float: left;
+}
+
+.photo img {
+  width: 100px; /* size of the image */
+  height: 100px; /* aspect ratio */
+  border-radius: 50%; /* makes the image circular */
+  object-fit: cover; /*maintains aspect ratio while covering the full area*/
+  border: 2px solid #007bff; /* border color */
+}

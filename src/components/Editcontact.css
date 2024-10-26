@@ -1,0 +1,66 @@
+.edit {
+  max-width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.editform {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.editform input,
+.editform select {
+  padding: 12px;
+  width: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.editform input:focus,
+.editform select:focus {
+  border-color: #6c63ff; /* Focus color */
+  outline: none;
+}
+
+.editform button {
+  padding: 12px;
+  background-color: #6c63ff; /* Button background color */
+  color: white; /* Text color */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editform button:hover {
+  background-color: #5a52e7; /* Darker shade on hover */
+}
+
+.editform a {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  color: #6c63ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.editform a:hover {
+  color: #5a52e7; /* Darker shade on hover */
+}

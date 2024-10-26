@@ -1,0 +1,20 @@
+section h3 {
+  color: antiquewhite;
+  text-align: center;
+  margin: 20px;
+}
+section img {
+  float: left;
+  filter: brightness(60%);
+  width: 50%;
+}
+form input {
+  width: 40%;
+  display: inline;
+  margin: 5px 20px;
+}
+form select {
+  width: 10%;
+  display: inline;
+  margin: 5px 20px;
+}

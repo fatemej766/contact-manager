@@ -1,0 +1,85 @@
+﻿$(function () {
+    PickSelectedVideoBox();    
+});
+
+function PickSelectedVideoBox() {
+    var currentVideoId = $("#currentVideo").attr("currentVideoId");
+
+    var currentVideoBox = $(`#${currentVideoId}`);
+
+    if (currentVideoBox.length) {
+        currentVideoBox.addClass("selected-video-style");
+    }
+}
+
+function ChangeSelectedVideo(id, videoAddress) {
+    var title = $(`#title-${id}`).html();
+
+    $("#currentVideo").attr("currentVideoId", id);
+
+    $("#currentVideoTitle").html(title);
+
+    $("#currentVideoSrc").attr("src", videoAddress);
+    $("#currentVideo")[0].load();
+
+    $("[name='videoBoxes']").removeClass("selected-video-style");
+
+    PickSelectedVideoBox();
+}
+
+$('#TrimmingVideosModal').on('hidden.bs.modal', function () {
+    $("#currentVideo")[0].load();
+});
+
+$(document).ready(function () {
+    function expandable() {
+        let btnDisplayMore = $('.js-collapse-btn');
+        let containerCourseDetails = $('.js-collapse-container');
+
+        // calculateHeight
+        let courseDetailMaxHeight = containerCourseDetails.css('max-height');
+        containerCourseDetails.addClass('collapsed');
+        let courseDetailHeight = containerCourseDetails.height();
+        containerCourseDetails.removeClass('collapsed');
+
+        if (courseDetailHeight < 350) {
+            btnDisplayMore.addClass('custom-display-none');
+        }
+
+        btnDisplayMore.click(function () {
+            if (containerCourseDetails.hasClass('collapsed-custom')) {
+                smoothClose(containerCourseDetails, courseDetailMaxHeight);
+            } else {
+                smoothOpen(containerCourseDetails, courseDetailHeight, courseDetailMaxHeight);
+            }
+
+        })
+    }
+    expandable();
+})
+
+function smoothOpen(el, openHeight, closeHeight) {
+    el.addClass('collapsed');
+    el.addClass('collapsed-custom');
+
+    $(el).css("max-height", "");
+
+    $(el).height(closeHeight);
+    $(el).animate({
+        'height': openHeight
+    }, 1000, function() {
+        $(el).css("max-height", "inherit");
+    })
+}
+
+function smoothClose(el, closeHeight) {
+    $(el).animate({
+        height: '350px'
+    }, 1000, function () {
+        $(el).css("max-height", "350px");
+        console.log('removed');
+        $(el).removeClass('collapsed');
+        $(el).removeClass('collapsed-custom');
+        $(el).css('height', 'auto');
+    })
+}
